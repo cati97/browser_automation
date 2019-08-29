@@ -1,4 +1,4 @@
-from quotes_scraping_using_selenium.locators.quotes_locators import QuoteLocators as Ql
+from quotes_scraping_using_selenium.locators.quotes_locators import QuoteLocators
 
 
 class QuoteParser:
@@ -13,15 +13,15 @@ class QuoteParser:
 
     @property
     def author(self):
-        locator = Ql.AUTHOR
+        locator = QuoteLocators.AUTHOR_CONTENT
         return self.parent.find_element_by_css_selector(locator).text
 
     @property
     def content(self):
-        locator = Ql.CONTENT
+        locator = QuoteLocators.CONTENT
         return self.parent.find_element_by_css_selector(locator).text
 
     @property
     def tags(self):
-        locator = Ql.TAGS
+        locator = QuoteLocators.TAGS
         return [t.string for t in self.parent.find_elements_by_css_selector(locator)]
