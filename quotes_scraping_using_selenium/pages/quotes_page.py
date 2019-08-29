@@ -33,3 +33,16 @@ class QuotesPage:
 
     def select_tag(self, tag_name: str):
         self.tag_dropdown.select_by_visible_text(tag_name)
+
+    def get_available_tags(self):
+        tags = [option.text.strip() for option in self.tag_dropdown.options]
+        return tags[1:]
+
+    def get_available_authors(self):
+        authors = [option.text.strip() for option in self.author_dropdown.options]
+        return authors[1:]
+
+    @property
+    def search_button(self):
+        locator = QuotesPageLocators.SEARCH_BUTTON
+        return self.browser.find_element_by_css_selector(locator)
