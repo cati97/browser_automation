@@ -6,5 +6,8 @@ chrome.get('http://quotes.toscrape.com/search.aspx')
 
 page = QuotesPage(chrome)
 
-for q in page.quotes:
-    print(q)
+author = input("Enter author name: ")
+page.select_author(author)
+
+tag = input("Enter tag name: ")
+page.select_tag(tag)
