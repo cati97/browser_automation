@@ -1,4 +1,4 @@
 class QuoteLocators:
-    AUTHOR = 'span.author'
+    AUTHOR_CONTENT = 'span.author'
     CONTENT = 'span.content'
     TAGS = 'span.tag'
